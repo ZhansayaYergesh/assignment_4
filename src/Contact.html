@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="ch.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Chanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <a class="dropdown-item" href="about.html">About<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="look&order.html">Look&Order<span class="sr-only">(current)</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Contact.html">Contact</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us through Telegram or by Instagram account:</p>
+    </div>
+</section>
+<hr>
+<section>
+    <div class="container">
+        <div class="contact-info">
+            <div class="telegram-username">
+                <a href="https://t.me/ka_wa_aii" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">&#xf1d8;</span>
+
+                </a>
+            </div>
+            <div class="instagram-username">
+                <a href="https://instagram.com/ka.wa_aii?igshid=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">&#xf16d;</span>
+                </a>
+        </div>
+    </div>
+    </div>
+</section>
+</hr>
+<section>
+    <div class="container">
+        <form id="contact-form" action="mailto:zhansaya.yergesh.05@bk.ru" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <span class="error" id="messageError"></span>
+
+            <input type="submit" value="Send via Email">
+        </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        if (!nameInput.value.trim()) {
+            document.getElementById('nameError').textContent = 'Name is required';
+            event.preventDefault();
+        } else {
+            document.getElementById('nameError').textContent = '';
+        }
+
+        if (!emailInput.value.trim()) {
+            document.getElementById('emailError').textContent = 'Email is required';
+            event.preventDefault();
+        } else {
+            document.getElementById('emailError').textContent = '';
+        }
+
+        if (!messageInput.value.trim()) {
+            document.getElementById('messageError').textContent = 'Message is required';
+            event.preventDefault();
+        } else {
+            document.getElementById('messageError').textContent = '';
+        }
+    });
+</script>
+<section>
+    <div class="container">
+<button onclick="showAlert()">click here after you leave feedback</button>
+    </div>
+</section>
+<script>
+    // Show a simple alert when the button is clicked
+    function showAlert() {
+        alert("Thank you for your feedback!");
+    }
+
+    // Notification
+    function showNotification() {
+        // Let's check if the browser supports notifications
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+
+        // Let's check whether notification permissions have already been granted
+        else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            var notification = new Notification("Thank you for your feedback!");
+        }
+
+        // Otherwise, we need to ask the user for permission
+        else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    var notification = new Notification("Thank you for your feedback!");
+                }
+            });
+        }
+    }
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

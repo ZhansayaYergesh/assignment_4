@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="ch.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Chanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <a class="dropdown-item" href="about.html">About<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="look&order.html">Look&Order<span class="sr-only">(current)</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Contact.html">Contact</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img id="movingImage" src="https://m.buro247.ru/images/2021/11/1637329111956836.jpg" alt="Chanel Boutique" class="img-fluid rounded img-transition" style="cursor: pointer;">
+            </div>
+            <div class="col-lg-6 about-content">
+                <h2>About Chanel</h2>
+                <p>
+                    Chanel is a French company producing expensive fashionable clothes, luxury perfumes and cosmetics, jewelry and other luxury goods. It was founded by fashion designer Coco Chanel in Paris in the early 20th century.
+                </p>
+                <p>
+                    Our mission is to empower individuals to express their unique style through our meticulously crafted designs. With a rich history and a commitment to creativity, Chanel continues to inspire and shape the fashion industry.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function moveElementLeftAndReturn(element, distance) {
+        let currentPosition = 0;
+        const id = setInterval(frame, 10);
+        function frame() {
+            if (currentPosition == distance) {
+                clearInterval(id);
+                const returnId = setInterval(returnFrame, 10);
+                function returnFrame() {
+                    if (currentPosition == 0) {
+                        clearInterval(returnId);
+                    } else {
+                        currentPosition--;
+                        element.style.transform = `translateX(-${currentPosition}px)`;
+                    }
+                }
+            } else {
+                currentPosition++;
+                element.style.transform = `translateX(-${currentPosition}px)`;
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const img = document.getElementById('movingImage');
+        moveElementLeftAndReturn(img, 500);
+    });
+</script>
+
+<section id="collection" class="py-5">
+    <div class="container">
+        <h2>Coco Chanel Fall 2023 Collection</h2>
+        <p>Discover the latest styles from the Coco Chanel Fall 2023 Collection.</p>
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="collection-item">
+                    <img src="https://assets.vogue.com/photos/64a3f0f1e2581e9fdd4ca9a1/master/w_1920,c_limit/00001-chanel-fall-2023-couture-credit-gorunway.jpg" alt="Collection Item 1">
+                    <h4>Parisian Elegance</h4>
+                    <p>The parade was led by Caroline de Maigret, best-selling author of “How to be Parisian Wherever You Are,” owning chic in her long, double-breasted navy tweed coat, hands trust in her pockets.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="collection-item">
+                    <img src="https://assets.vogue.com/photos/64a3f0f2346bc63165212380/master/w_1920,c_limit/00002-chanel-fall-2023-couture-credit-gorunway.jpg" alt="Collection Item 2">
+                    <h4>A Work of Art</h4>
+                    <p>Viard’s approach is Chanel as lifestyle.  “Sophistication and simplicity, permanence and beauty” were phrases in her press release. She went about portraying it down to faithfully reflecting the inimitable French beauty standard.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="collection-item">
+                    <img src="https://assets.vogue.com/photos/64a3f0f16d2b1f02bbf7a4ee/master/w_1920,c_limit/00003-chanel-fall-2023-couture-credit-gorunway.jpg" alt="Collection Item 3">
+                    <h4>A Dreamy Vision in Chanel</h4>
+                    <p>Couture on the quai, en plein air. It was easy to get swept up in the everyday-idyllic atmosphere of Virginie Viard’s massed stroll of Parisiennes along the Seine. There they were, walking nonchalantly in their block-heeled Mary Janes, just as if wearing haute couture to walk the dog or pick up some flowers at the market were most the most normal thing in the world.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
